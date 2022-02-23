@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ErrorList from "./ErrorList.js";
 import translateServerErrors from "../services/translateServerErrors";
 import { Link, withRouter } from "react-router-dom";
+import AnimalsList from "./AnimalsList.js";
 
 const AnimalShow = (props) => {
   const [animal, setAnimal] = useState({

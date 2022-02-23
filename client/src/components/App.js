@@ -37,6 +37,10 @@ const App = (props) => {
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
+        <Route exact path="/animals" component={AnimalsList} />
+        <Route exact path="/animals/:id">
+          <AnimalShow user={currentUser} />
+        </Route>
       </Switch>
     </Router>
   );
