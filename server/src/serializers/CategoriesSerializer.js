@@ -13,8 +13,9 @@ class CategoriesSerializer {
   static async getDetails(category) {
     const serializedCategory = this.getSummary(category);
     const relatedAnimals = await category.$relatedQuery("animals");
+
     const serializedAnimals = await Promise.all(
-      relatedAnimals.map(async (pasta) => AnimalsSerializer.getDetails(animal))
+      relatedAnimals.map(async (animal) => AnimalsSerializer.getDetails(animal))
     );
     serializedCategory.animals = serializedAnimals;
     return serializedCategory;
