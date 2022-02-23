@@ -26,7 +26,7 @@ const CategoriesList = (props) => {
   const categoriesListItems = categories.map((category) => {
     return (
       <div className="category-tile" key={category.id}>
-        <Link to={`/animals/${category.id}`}>{category.name}</Link>
+        <Link to={`/categories/${category.id}`}>{category.name}</Link>
       </div>
     );
   });

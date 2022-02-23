@@ -8,6 +8,7 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import CategoriesList from "./CategoriesList.js";
+import CategoryShow from "./CategoryShow.js";
 import HomePage from "./HomePage.js";
 import AnimalsList from "./AnimalsList.js";
 import AnimalShow from "./AnimalShow.js";
@@ -31,14 +32,19 @@ const App = (props) => {
     <Router>
       <TopBar user={currentUser} />
       <Switch>
-        <Route exact path="/">
-          <h2>Welcome from App.js </h2>
-          <CategoriesList />
+        <Route exact path="/" component={CategoriesList} />
+        <Route exact path="/categories" component={CategoriesList} />
+        <Route exact path="/categories/:id">
+          <CategoryShow user={currentUser} />
         </Route>
-        <Route exact path="/users/new" component={RegistrationForm} />
-        <Route exact path="/user-sessions/new" component={SignInForm} />
+
         <Route exact path="/animals" component={AnimalsList} />
         <Route exact path="/animals/:id">
+          <AnimalShow user={currentUser} />
+        </Route>
+
+        <Route exact path="/users/new" component={RegistrationForm} />
+        <Route exact path="/user-sessions/new" component={SignInForm}>
           <AnimalShow user={currentUser} />
         </Route>
       </Switch>

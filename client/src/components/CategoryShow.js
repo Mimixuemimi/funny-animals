@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, useParams } from "react-router-dom";
 import ErrorList from "./ErrorList.js";
 import translateServerErrors from "../services/translateServerErrors";
 import CategoriesList from "./CategoriesList.js";
+import  { Link } from 'react-router-dom'
 
 const CategoryShow = (props) => {
   const [category, setCategory] = useState({
@@ -10,9 +11,17 @@ const CategoryShow = (props) => {
     animals: [],
   });
   const [errors, setErrors] = useState([]);
+  const params = useParams();
 
-  const categoryId = props.match.params.id;
+  const categoryId = params.id;
   const user = props.user;
+
+  let animalList = "";
+  if (category.animals.length >= 1) {
+    animalList = category.animals.map((animal) => {
+      return <Link to={`/animals/${animal.id}`}> <p>{animal.name}</p> </Link>;
+    });
+  }
 
   const getCategory = async () => {
     try {
@@ -23,6 +32,7 @@ const CategoryShow = (props) => {
         throw error;
       }
       const body = await response.json();
+      console.log("This is the body of the fetch request: ", body);
       setCategory(body.category);
     } catch (error) {
       console.error(`Error in fetch: ${error.message}`);
@@ -70,7 +80,9 @@ const CategoryShow = (props) => {
         <h1 className="category-tile">{category.name} Animals:</h1>
       </div>
       <div className="list-container">
-        <div className="column-grid"> {CategoriesList} </div>
+        <div className="column-grid">
+          <ul>{animalList}</ul>
+        </div>
       </div>
     </>
   );

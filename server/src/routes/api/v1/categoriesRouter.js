@@ -19,8 +19,18 @@ categoriesRouter.get("/", async (req, res) => {
   }
 });
 
-categoriesRouter.get("/summary", async (req, res) => {});
+categoriesRouter.get("/:id", async (req, res) => {
+  const categoryIndex = req.params.id;
+  try {
+    const category = await Category.query().findById(categoryIndex);
+    const serializedCategoryAnimals = await CategoriesSerializer.getDetails(category);
+    console.log("Serialized animals and category? ", serializedCategoryAnimals)
+    return res.status(200).json({ category: serializedCategoryAnimals });
+  } catch (error) {
+    return res.status(500).json({ errors: error });
+  }
+});
 
-categoriesRouter.get("/detail", async (req, res) => {});
+// categoriesRouter.use("/:categoryId/animals", categoriesAnimalsRouter);
 
 export default categoriesRouter;

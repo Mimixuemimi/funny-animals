@@ -24,7 +24,7 @@ const AnimalsList = (props) => {
   const animalListItems = animals.map((animal) => {
     return (
       <div className="animal-tile" key={animal.id}>
-        <Link t0={`/animals/${animal.id}`}>{animal.name}</Link>
+        <Link to={`/animals/${animal.id}`}>{animal.name}</Link>
       </div>
     );
   });
@@ -35,7 +35,7 @@ const AnimalsList = (props) => {
         <h2> Click to see more info! from AnimalList.js </h2>
       </div>
       <div className="list-container">
-        <div className="colum-grid"> {animalListItems} </div>
+        <div className="column-grid"> {animalListItems} </div>
       </div>
     </>
   );
