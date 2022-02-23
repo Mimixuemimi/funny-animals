@@ -7,8 +7,9 @@ import "../assets/scss/main.scss";
 import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
-import SpeciesList from "./CategoriesList.js";
-import HomePage from "./HomePage";
+import CategoriesList from "./CategoriesList.js";
+import HomePage from "./HomePage.js";
+import AnimalsList from "./AnimalsList";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -31,7 +32,7 @@ const App = (props) => {
       <Switch>
         <Route exact path="/">
           <h2>Welcome from App.js </h2>
-          <SpeciesList />
+          <CategoriesList />
         </Route>
         <Route exact path="/users/new" component={RegistrationForm} />
         <Route exact path="/user-sessions/new" component={SignInForm} />
