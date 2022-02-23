@@ -9,7 +9,8 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 import CategoriesList from "./CategoriesList.js";
 import HomePage from "./HomePage.js";
-import AnimalsList from "./AnimalsList";
+import AnimalsList from "./AnimalsList.js";
+import AnimalShow from "./AnimalShow.js";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(null);
