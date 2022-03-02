@@ -44,9 +44,7 @@ const App = (props) => {
         </Route>
 
         <Route exact path="/users/new" component={RegistrationForm} />
-        <Route exact path="/user-sessions/new" component={SignInForm}>
-          <AnimalShow user={currentUser} />
-        </Route>
+        <Route exact path="/user-sessions/new" component={SignInForm} />
       </Switch>
     </Router>
   );

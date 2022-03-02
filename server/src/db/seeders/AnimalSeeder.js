@@ -16,7 +16,7 @@ class AnimalSeeder {
         name: "Zouwu",
         description:
           "The Zouwu is a powerful magical creature native to China. It is five-coloured and resemble a gigantic elephant-sized cat. Zouwus are incredibly powerful and fast, capable of travelling 1,000 miles in a day.",
-        skill: "Fight for you, pur with you!",
+        skill: "Fight for you, purrrr with you!",
         image:
           "https://cdn.i-scmp.com/sites/default/files/styles/1320w/public/d8/images/2018/11/22/076_chl_127785.jpg?itok=onoD74cw",
         categoryId: wishList.id,
@@ -58,8 +58,9 @@ class AnimalSeeder {
         name: "Phoenix",
         description:
           "Phoenixes are magical birds bearing stunning red and gold plumage. They have many powerful magical properties. At the end of their lives, their feathers wilt until they burst into flame. However, once they burn away, they are are reborn from their ashes.",
-          skill: "Comes back to life every time it perishes. Can manipulate fire and heal other beings with its tears.",
-          image: "https://i.pinimg.com/originals/e9/ac/f9/e9acf9772b4173a8d93914d256846a6b.png",
+        skill:
+          "Comes back to life every time it perishes. Can manipulate fire and heal other beings with its tears.",
+        image: "https://i.pinimg.com/originals/e9/ac/f9/e9acf9772b4173a8d93914d256846a6b.png",
         categoryId: birdy.id,
       },
       {
