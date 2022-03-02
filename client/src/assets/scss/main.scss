@@ -2,6 +2,10 @@
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
 // place global css here
+@import "./homepage.scss";
+@import "./category.scss";
+@import "./animal.scss";
+
 *,
 *::before,
 *::after {
@@ -13,40 +17,13 @@
   tab-size: 4;
 }
 
-.top-bar {
-  text-align: center;
-  border-radius: 15px;
-  border-color: rgb(99, 3, 27);
-  background-color: #ffffff99;
-  color: #c92c20;
-  width: 100%;
-}
-
-.homepage.header {
-  width: 100%;
-  text-align: center;
-  background-color: #fcd32c;
-  color: #c92c20;
-}
-
-.homepage.tag-line {
-  text-align: center;
-  background-color: #ffffff;
-  width: 70%;
-  margin-top: 1%;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: solid;
-  border-color: #fcd32c;
-}
-
 body {
   background-image: url("https://i.imgur.com/oIPutNC.jpg");
   background-size: 1400px;
 }
 
 .list-container {
-  border-style: solid;
+  // border-style: solid;
   border-radius: 10px;
   border-color: rgb(99, 3, 27);
   background-color: #ffffff99;
@@ -54,6 +31,8 @@ body {
   margin-top: 2%;
   margin-left: 10%;
   margin-right: 10%;
+  // font-family: "Oswald", Helvetica Neue;
+  font-size: large;
 }
 
 .column-grid {
@@ -64,25 +43,13 @@ body {
   row-gap: 25px;
 }
 
-.category-title {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1%;
-  width: 50%;
-  background-color: #ffffff99;
-
-  text-align: center;
-  color: black;
-  border-radius: 10px;
-}
-
 .animal-info {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1%;
   width: 80%;
   background-color: #ffffff99;
-
+  font-size: large;
   text-align: center;
   color: black;
   border-radius: 10px;

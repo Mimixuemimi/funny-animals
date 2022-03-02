@@ -32,7 +32,7 @@ const AnimalsList = (props) => {
   return (
     <>
       <div className="call-to-action">
-        <h2> Click to see more info! from AnimalList.js </h2>
+        {/* <h2> Click to see more info! from AnimalList.js </h2> */}
       </div>
       <div className="list-container">
         <div className="column-grid"> {animalListItems} </div>
